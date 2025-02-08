@@ -1,0 +1,410 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap");
+
+/* UNIVERSAL SELECTOR */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  text-decoration: none;
+  outline: none;
+  border: none;
+}
+
+/* HTML ELEMENT */
+
+html {
+  font-size: 62.5%;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+/* BODY ELEMENT */
+
+body {
+  font-family: "Poppins", sans-serif;
+  /* overflow: hidden; */
+  color: white;
+}
+
+img {
+  display: block;
+  object-fit: cover;
+  width: 100%;
+}
+
+.window-scroll {
+  background: #c40094;
+  box-shadow: 0rem 1rem 2rem rgba(0, 0, 0, 0.3);
+}
+
+/* MAIN CONTAINER */
+
+main {
+  background-color: rgb(20, 4, 4);
+  background-image: url("background.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
+  transition: all 0.1s ease-in-out;
+}
+
+/* HEADER */
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.5rem 10rem;
+  z-index: 999999;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: white;
+  font-weight: 700;
+
+  cursor: pointer;
+  font-size: 2.8rem;
+}
+
+/* NAV BAR */
+
+header ul {
+  font-size: 1.7rem;
+  font-weight: 550;
+  display: flex;
+  gap: 10rem;
+}
+
+header ul li a {
+  transition: all 300ms ease;
+  cursor: pointer;
+}
+
+header ul li a {
+  color: white;
+}
+header ul li a.active,
+header ul li a:hover {
+  color: #ffcc00 ;
+}
+
+.nav-icon {
+  display: none;
+  font-size: 2.5rem;
+}
+
+
+
+/* ============= TEAM ==================== */
+
+.team-section {
+  padding: 10rem;
+  /* box-shadow: inset 0 0 3rem rgba(0, 0, 0, 0.5); */
+  /* background: var(--color-bg1); */
+}
+
+.team-section h2 {
+  margin-bottom: 4rem;
+  text-align: center;
+  font-size: 3.5rem;
+  color: white;
+}
+
+.team-container {
+  /* margin-left: 500px; */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4rem;
+}
+
+.team {
+  /* width: 27rem; */
+  padding: 1.5rem;
+  background: #950170;
+  border-radius: 1rem;
+  border: 1px solid transparent;
+  position: relative;
+  transition: all 300ms ease;
+  overflow: hidden;
+}
+
+.team:hover {
+  border-color: white;
+  background: transparent;
+}
+
+.team .avatar img {
+  border-radius: 1rem;
+}
+
+.team:hover img {
+  filter: saturate(1);
+}
+
+.team .team-info {
+  text-align: center;
+  margin-top: 3.5rem;
+  line-height: 1.7;
+}
+
+.team .team-info h4 {
+  font-size: 2rem;
+}
+
+.team .team-info small {
+  font-weight: 500;
+  font-size: 1.5rem;
+
+  color: var(--color-light);
+}
+
+.team-socials {
+  /* background: var(--color-primary); */
+  padding: 1.5rem;
+  border-radius: 1rem 0 0 1rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: -100%;
+  display: flex;
+  background: #c4005b;
+
+  flex-direction: column;
+  box-shadow: -2rem 0 2rem rgba(0, 0, 0, 0.3);
+  transition: all 300ms ease;
+}
+
+.team:hover .team-socials {
+  right: 0;
+}
+
+.team-socials a i {
+  font-size: 2.2rem;
+  margin-bottom: 1.2rem;
+  color: white;
+}
+
+/* FOOTER */
+
+.footer {
+  display: grid;
+  place-items: center;
+  padding: 1rem 0;
+  border-top: 2px solid white;
+}
+
+.contact-socials {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0 0;
+}
+
+.footer p {
+  font-size: 2rem;
+}
+
+.contact-socials a {
+  background: #9400c4;
+  width: 5.7rem;
+  height: 5.7rem;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.3rem;
+  transition: all 300ms ease;
+}
+
+.contact-socials a:hover {
+  background: transparent;
+}
+
+@media screen and (max-width: 1030px) {
+
+  /* NAV  MENU BAR */
+
+  header ul {
+    font-size: 1.5rem;
+    display: none;
+    gap: 10rem;
+
+    position: fixed;
+    top: 7rem;
+    right: 12%;
+
+  }
+
+  header ul li {
+    box-shadow: -4rem 1rem 10rem rgba(0, 0, 0, 0.5);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #c40094 ;
+
+    animation: navAnimation 600ms ease forwards;
+    transform: rotateX(90deg);
+    transform-origin: top;
+    opacity: 0;
+  }
+
+  header ul li:nth-child(2) {
+    animation-delay: 200ms;
+  }
+
+  header ul li:nth-child(3) {
+    animation-delay: 400ms;
+  }
+
+  header ul li a {
+    padding: 2rem 5rem;
+
+  }
+
+  .open-menu {
+    display: block;
+  }
+
+  @keyframes navAnimation {
+    0% {
+      transform: rotateZ(-90deg) rotate(90deg) scale(0.1);
+    }
+    100% {
+      transform: rotateZ(0deg) rotate(0) scale(1);
+      opacity: 1;
+    }
+  }
+
+
+  header {
+    padding: 1.5rem 5rem;
+
+  }
+
+  .contact {
+    padding: 10rem 5rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  header {
+    padding: 1.5rem 2rem;
+
+  }
+
+  .contact {
+    padding: 10rem 2rem;
+  }
+
+  .logo {
+    font-size: 2.2rem;
+  }
+}
+
+
+/* TEAM */
+
+@media screen and (max-width: 1200px) {
+  .team-socials {
+    right: 0;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  header {
+    padding: 1.5rem 5rem;
+  }
+
+  .team-section {
+    padding: 10rem 5rem;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .team-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 720px) {
+  header {
+    padding: 1.5rem 2rem;
+  }
+
+  .team-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+  }
+
+  .team-section {
+    padding: 10rem 2rem;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .team-container {
+    gap: 1.5rem;
+  }
+
+  .team-section h2 {
+    font-size: 3rem;
+}
+}
+
+@media screen and (max-width: 500px) {
+  .team-container {
+    gap: 1.5rem;
+  }
+
+  .team-section h2 {
+    font-size: 2.5rem;
+}
+
+  .team-socials {
+    padding: 1rem;
+  }
+
+  .team .team-info small {
+    font-size: 1rem;
+  }
+
+  .contact-socials a {
+    width: 4.7rem;
+    height: 4.7rem;
+    font-size: 2.5rem;
+  }
+}
+
+
+@media screen and (max-width: 500px) {
+  .team-section h2 {
+    font-size: 2.05rem;
+}
+}
+@media screen and (max-width: 350px) {
+  .team-socials {
+    padding: 1rem;
+    top: 40%;
+  }
+
+  .team-socials a i {
+    font-size: 1.5rem;
+  }
+
+  .team .team-info h4 {
+    font-size: 1.8rem;
+  }
+}
